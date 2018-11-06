@@ -46,12 +46,68 @@ def plot_seasonal(df,ax,units):
     ax.set_position([box.x0, box.y0, box.width * 0.9, box.height])
     ax.legend('')
     
-def plot_seasonal_m(df,ax,units):
-    idx = pd.MultiIndex.from_arrays([df.index.month, df.index.year])
-    df.set_index(idx).unstack().plot(ax=ax,colormap='RdBu')
-    ax.set_facecolor('tab:gray')
+def plot_projection_m(df,ax,units):
+    df.plot(ax=ax)
     ax.set_xlabel('')
     ax.set_ylabel(''.join(df.columns.values)+'   ' +units)
     box = ax.get_position()
     ax.set_position([box.x0, box.y0, box.width * 0.9, box.height])
     ax.legend('')
+    
+apicode=dict(    
+    CRSTKW='PET.WCESTUS1.W',
+    CRNIMPW='PET.WCRNTUS2.W',
+    CRUTIW='PET.WPULEUS3.W',
+    GOSTKW='PET.WDISTUS1.W',
+    GOPRODW='PET.WDIRPUS2.W',
+    GODEMW='PET.WDIUPUS2.W',
+    GOEXPW='PET.WDIEXUS2.W',
+    RBSTKW='PET.WGTSTUS1.W',
+    RBPRODW='PET.WGFRPUS2.W',
+    RBDEMW='PET.WGFUPUS2.W',
+    RBEXPW='PET.W_EPM0F_EEX_NUS-Z00_MBBLD.W',
+
+    CRSTK1W='PET.WCESTP11.W',
+    CRSTK2W='PET.WCESTP21.W',
+    CRSTK3W='PET.WCESTP31.W',
+    CRSTK4W='PET.WCESTP41.W',
+    CRSTK5W='PET.WCESTP51.W',
+    CRUTI1W='PET.W_NA_YUP_R10_PER.W',
+    CRUTI2W='PET.W_NA_YUP_R20_PER.W',
+    CRUTI3W='PET.W_NA_YUP_R30_PER.W',
+    CRUTI4W='PET.W_NA_YUP_R40_PER.W',
+    CRUTI5W='PET.W_NA_YUP_R50_PER.W',
+    GOSTK1W='PET.WDISTP11.W',
+    GOSTK2W='PET.WDISTP21.W',
+    GOSTK3W='PET.WDISTP31.W',
+    GOSTK4W='PET.WDISTP41.W',
+    GOSTK5W='PET.WDISTP51.W',
+    GOPROD1W='PET.WDIRPP12.W',
+    GOPROD2W='PET.WDIRPP22.W',
+    GOPROD3W='PET.WDIRPP32.W',
+    GOPROD4W='PET.WDIRPP42.W',
+    GOPROD5W='PET.WDIRPP52.W',
+    RBSTK1W='PET.WGTSTP11.W',
+    RBSTK2W='PET.WGTSTP21.W',
+    RBSTK3W='PET.WGTSTP31.W',
+    RBSTK4W='PET.WGTSTP41.W',
+    RBSTK5W='PET.WGTSTP51.W',
+    RBPROD1W='PET.WGFRPP12.W',
+    RBPROD2W='PET.WGFRPP22.W',
+    RBPROD3W='PET.WGFRPP32.W',
+    RBPROD4W='PET.WGFRPP42.W',
+    RBPROD5W='PET.WGFRPP52.W',
+
+    CRSTKP='STEO.COSXPUS.M',
+    CRPRODP='STEO.COPRPUS.M',
+    CRNIMPP='STEO.CONIPUS.M',
+    CRUTIP='STEO.ORUTCUS.M',
+    GOSTKP='STEO.DFPSPUS.M',
+    GOPRODP='STEO.DFROPUS.M',
+    GONIMPP='STEO.DFNIPUS.M',
+    GODEMP='STEO.DFTCPUS.M',
+    RBSTKP='STEO.MGTSPUS.M',
+    RBPRODP='STEO.MGROPUS.M',
+    RBIMPP='STEO.MGNIPUS.M',
+    RBDEMP='STEO.MGTCPUSX.M'
+)
